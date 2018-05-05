@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "description": "giao dien web film tieng Nhat co ban",
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.7",
+    "@fortawesome/fontawesome-free-solid": "^5.0.12",
+    "@fortawesome/react-fontawesome": "0.0.19",
     "classnames": "^2.2.5",
     "eslint": "^4.19.1",
     "lint-staged": "^7.0.5",

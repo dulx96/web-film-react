@@ -26,8 +26,7 @@ class Sidebar extends Component {
 
                 </Responsive>
 
-                <Responsive maxWidth={1444}
-                            >
+                <Responsive maxWidth={1444}>
                     <SidebarMobile visible={this.props.visible} toggleVisibility={this.props.toggleVisibility}/>
                 </Responsive>
             </div>

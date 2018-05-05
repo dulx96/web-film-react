@@ -9,8 +9,8 @@ import MainContent from "./components/MainContent/MainContent";
 import Sidebar from "./components/Sidebar/Sidebar"
 import classNames from 'classnames';
 
-class App extends Component {
-    constructor(props) {
+    class App extends Component {
+        constructor(props) {
         super(props)
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     }
