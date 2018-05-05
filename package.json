@@ -4,8 +4,10 @@
   "version": "1.0.0",
   "description": "giao dien web film tieng Nhat co ban",
   "dependencies": {
+    "classnames": "^2.2.5",
     "eslint": "^4.19.1",
     "lint-staged": "^7.0.5",
+    "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-hot-loader": "^3.1.3",
