@@ -17,7 +17,7 @@ class Sidebar extends Component {
     render() {
         return (
             <div>
-                <Responsive minWidth={1444} style={{paddingTop: this.props.paddingTop}}
+                <Responsive minWidth={1276} style={{paddingTop: this.props.paddingTop}}
                             className={classNames({
                                 [styles.siderbarDesktop]: true,
                                 [styles.inactive]: !this.props.visible
@@ -26,7 +26,7 @@ class Sidebar extends Component {
 
                 </Responsive>
 
-                <Responsive maxWidth={1444}>
+                <Responsive maxWidth={1276}>
                     <SidebarMobile visible={this.props.visible} toggleVisibility={this.props.toggleVisibility}/>
                 </Responsive>
             </div>

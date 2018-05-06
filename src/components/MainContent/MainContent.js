@@ -8,13 +8,23 @@ import classNames from 'classnames'
 class MainContent extends Component {
     static propTypes = {
         visible: PropTypes.bool,
+        sidebarMobile: PropTypes.bool,
         paddingTop: PropTypes.number,
+
     }
 
     render() {
         return (
-            <div className={classNames({[styles["main-container"]]: true,[styles.notfull]: this.props.visible})} style={{paddingTop: this.props.paddingTop}}>
-                <Content/>
+            <div className={classNames({
+                [styles["main-container"]]: true,
+                [styles.notfull]: this.props.visible,
+                [styles.mobile]: this.props.sidebarMobile
+            })}
+                 style={{paddingTop: this.props.paddingTop}}>
+                <div className={styles["container-wrap"]}>
+                    <Content/>
+                </div>
+
             </div>
         )
     }

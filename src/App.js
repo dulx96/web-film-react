@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import {Button, Grid, Header, List, Segment} from 'semantic-ui-react'
 
 import 'styling/semantic.less'
-import * as styles from './styling/App.less'
+require('./styling/App.less')
 import Topbar from './components/Topbar/Topbar'
 import MainContent from "./components/MainContent/MainContent";
 import Sidebar from "./components/Sidebar/Sidebar"
@@ -36,7 +36,7 @@ import classNames from 'classnames';
     }
 
     updateWindowDimensions() {
-        this.setState({ screenWidth: window.innerWidth, sidebarVisible: window.innerWidth > 1444 ? true: false});
+        this.setState({ screenWidth: window.innerWidth, sidebarVisible: window.innerWidth >= 1276 ? true: false});
     }
 
     render() {
@@ -54,7 +54,7 @@ import classNames from 'classnames';
 
                 </Sidebar>
 
-                <MainContent visible={sidebarVisible} paddingTop={topbarHeight} >
+                <MainContent visible={sidebarVisible} paddingTop={topbarHeight} sidebarMobile={this.state.screenWidth < 1276 ? true : false}>
 
                 </MainContent>
 

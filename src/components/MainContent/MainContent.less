@@ -1,5 +1,5 @@
+@import "../CardITem/CardITem";
 .main-container {
-  position: absolute;
   top:0;
   left: 0;
   max-width: 100vw;
@@ -8,10 +8,57 @@
   overflow-y: scroll;
   overflow-x: hidden;
 }
-.main-container h1 {
-  width: 90%;
-}
 
 .main-container.notfull {
   padding-left: 240px;
+  .CardContainer {
+    //@media (min-width: 662px){
+    //  width: calc(floor((662px-10px-240px)/(210px + @card-magrin*2))*(210px + 2*@card-magrin));
+    //}
+    //@media (min-width: 876px){
+    //  width: calc(floor((876px-10px-240px)/(210px + @card-magrin*2))*(210px + 2*@card-magrin));
+    //}
+    @media (min-width: 1276px){
+      width: calc(floor((1276px-10px-240px)/(210px + @card-magrin*2))*(210px + 2*@card-magrin));
+    }
+    @media (min-width: 1390px){
+      width: calc(floor((1390px-10px-240px)/(210px + @card-magrin*2))*(210px + 2*@card-magrin));
+    }
+    @media (min-width: 1610px){
+      width: calc((210px + 2*@card-magrin) * 6)
+    }
+  }
+}
+
+.main-container.mobile{
+  padding-left: 0 !important;
+}
+
+.CardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  @media (min-width: 662px){
+    width: calc(floor((662px-10px)/(210px + @card-magrin*2))*(210px + 2*@card-magrin));
+  }
+  @media (min-width: 876px){
+    width: calc(floor((876px-10px)/(210px + @card-magrin*2))*(210px + 2*@card-magrin));
+  }
+  @media (min-width: 1027px){
+    width: calc(floor((1027px-10px)/(210px + @card-magrin*2))*(210px + 2*@card-magrin));
+  }
+  @media (min-width: 1276px){
+    width: calc(floor((1276px-10px)/(210px + @card-magrin*2))*(210px + 2*@card-magrin));
+  }
+  @media (min-width: 1276px){
+    width: calc(floor((1276px-10px)/(210px + @card-magrin*2))*(210px + 2*@card-magrin));
+  }
+  @media (min-width: 1390px){
+    width: calc(floor((1390px-10px)/(210px + @card-magrin*2))*(210px + 2*@card-magrin));
+  }
+
+}
+
+.container-wrap {
+  display: flex;
+  justify-content: center;
 }
