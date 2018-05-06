@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 
 import Content from './Content'
 import * as styles from './MainContent.less'
+import Carousel from '../Carousel/Carousel'
 import classNames from 'classnames'
 
 class MainContent extends Component {
@@ -22,6 +23,8 @@ class MainContent extends Component {
             })}
                  style={{paddingTop: this.props.paddingTop}}>
                 <div className={styles["container-wrap"]}>
+                    <Carousel/>
+
                     <Content/>
                 </div>
 

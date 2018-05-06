@@ -5,8 +5,10 @@
   max-width: 100vw;
   max-height: 100vh;
   transition: all 0.3s;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow: hidden;
+  &:hover{
+    overflow-y: scroll;
+  }
 }
 
 .main-container.notfull {
@@ -58,7 +60,24 @@
 
 }
 
-.container-wrap {
-  display: flex;
+
+.wrap-content {
+  width: 100%;
+  display: inline-flex;
   justify-content: center;
+}
+.content{
+  border-bottom: 1px solid rgba(148, 148, 148, 0.14);
+  padding-bottom: 20px;
+}
+
+.title {
+  font-size: 30px;
+  color: #ee5253;
+  p {
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.46);
+    margin-left: 15px;
+    font-size: 18px;
+  }
 }

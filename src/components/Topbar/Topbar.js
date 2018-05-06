@@ -2,9 +2,11 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
-import {Container, Menu, Image, Icon} from 'semantic-ui-react'
+import {Container, Menu, Image, Icon, Input} from 'semantic-ui-react'
 
 import logo from 'resources/logo.png'
+
+import * as styles from './Topbar.less'
 
 export default class Topbar extends Component {
     static propTypes = {
@@ -21,9 +23,16 @@ export default class Topbar extends Component {
                     <Menu.Item>
                         <Image size='mini' src={logo}/>
                     </Menu.Item>
-                    <Container textAlign='center'>
-                        Search Bar
+                    <Container className={styles.SearchWrap} textAlign='center'>
+                        <Input
+                            icon={<Icon name='search' inverted circular link />}
+                            placeholder='Search...'
+                            style={{width: 600}}
+                        />
                     </Container>
+                    <Menu.Item>
+                        <Icon name='user circle' size='big' />
+                    </Menu.Item>
                 </Container>
             </Menu>
         )
