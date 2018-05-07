@@ -24,8 +24,8 @@ class MainContent extends Component {
                  style={{paddingTop: this.props.paddingTop}}>
                 <div className={styles["container-wrap"]}>
                     <Carousel/>
-
                     <Content/>
+
                 </div>
 
             </div>

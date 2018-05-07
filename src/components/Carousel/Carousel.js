@@ -1,65 +1,32 @@
-import React, {Component} from 'react'
-import CardItem from '../CardITem/CardItem'
-import AliceCarousel from 'react-alice-carousel';
-import "react-alice-carousel/lib/alice-carousel.css";
+import React, {Component} from "react";
+import Slider from "react-slick";
+import * as styles from './Carousel.css'
+import "slick-carousel/slick/slick-theme.css";
 
+import Slide from '../Carousel/Slide'
 
-class Carousel extends Component {
+export default class CenterMode extends Component {
     render() {
+        const settings = {
+            className: "center",
+            centerMode: true,
+            infinite: true,
+            centerPadding: "0",
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: false,
+            speed: 500
+        };
         return (
-            <AliceCarousel>
-
-                <CardItem imageID='item1.jpg'
-                          name='Sword Art Online -SS1 (2012)'
-                          category='Anime'
-                          level='N3'
-                          star={4}
-                          views={100}
-                          sub={['VI', 'JA']}
-                          length='30 Eps'
-                          genre='Action, Comedy'/>
-                <CardItem imageID='item1.jpg'
-                          name='Sword Art Online -SS1 (2012)'
-                          category='Anime'
-                          level='N3'
-                          star={4}
-                          views={100}
-                          sub={['VI', 'JA']}
-                          length='30 Eps'
-                          genre='Action, Comedy'/>
-                <CardItem imageID='item1.jpg'
-                          name='Sword Art Online -SS1 (2012)'
-                          category='Anime'
-                          level='N3'
-                          star={4}
-                          views={100}
-                          sub={['VI', 'JA']}
-                          length='30 Eps'
-                          genre='Action, Comedy'/>
-                <CardItem imageID='item1.jpg'
-                          name='Sword Art Online -SS1 (2012)'
-                          category='Anime'
-                          level='N3'
-                          star={4}
-                          views={100}
-                          sub={['VI', 'JA']}
-                          length='30 Eps'
-                          genre='Action, Comedy'/>
-                <CardItem imageID='item1.jpg'
-                          name='Sword Art Online -SS1 (2012)'
-                          category='Anime'
-                          level='N3'
-                          star={4}
-                          views={100}
-                          sub={['VI', 'JA']}
-                          length='30 Eps'
-                          genre='Action, Comedy'/>
-
-            </AliceCarousel>
-        )
+            <div>
+                <Slider {...settings}>
+                    <Slide imageUrl="slide1.jpg"/>
+                    <Slide imageUrl="slide2.jpg"/>
+                    <Slide imageUrl="slide3.jpg"/>
+                    <Slide imageUrl="slide4.jpg"/>
+                    <Slide imageUrl="slide5.jpg"/>
+                </Slider>
+            </div>
+        );
     }
-
 }
-
-export default Carousel
-

@@ -24,7 +24,7 @@ const Content = () => (
                           sub={['VI', 'JA']}
                           length='30 Eps'
                           genre='Action, Comedy'/>
-                <CardItem imageID='item1.jpg'
+                <CardItem imageID='item2.jpg'
                           name='Sword Art Online -SS1 (2012)'
                           category='Anime'
                           level='N3'
@@ -33,7 +33,7 @@ const Content = () => (
                           sub={['VI', 'JA']}
                           length='30 Eps'
                           genre='Action, Comedy'/>
-                <CardItem imageID='item1.jpg'
+                <CardItem imageID='item3.jpg'
                           name='Sword Art Online -SS1 (2012)'
                           category='Anime'
                           level='N3'
@@ -42,7 +42,7 @@ const Content = () => (
                           sub={['VI', 'JA']}
                           length='30 Eps'
                           genre='Action, Comedy'/>
-                <CardItem imageID='item1.jpg'
+                <CardItem imageID='item4.jpg'
                           name='Sword Art Online -SS1 (2012)'
                           category='Anime'
                           level='N3'
@@ -51,7 +51,7 @@ const Content = () => (
                           sub={['VI', 'JA']}
                           length='30 Eps'
                           genre='Action, Comedy'/>
-                <CardItem imageID='item1.jpg'
+                <CardItem imageID='item5.jpg'
                           name='Sword Art Online -SS1 (2012)'
                           category='Anime'
                           level='N3'
@@ -60,7 +60,7 @@ const Content = () => (
                           sub={['VI', 'JA']}
                           length='30 Eps'
                           genre='Action, Comedy'/>
-                <CardItem imageID='item1.jpg'
+                <CardItem imageID='item6.jpg'
                           name='Sword Art Online -SS1 (2012)'
                           category='Anime'
                           level='N3'

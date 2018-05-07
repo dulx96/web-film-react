@@ -72,6 +72,17 @@ module.exports = {
             // "style" loader turns CSS into JS modules that inject <style> tags.
             // In production, we use a plugin to extract that CSS to a file, but
             // in development "style" loader enables hot editing of CSS.
+            ,
+            {
+                test: /\.less$/,
+                use: [{
+                    loader: 'style-loader' // creates style nodes from JS strings
+                }, {
+                    loader: 'css-loader' // translates CSS into CommonJS
+                }, {
+                    loader: 'less-loader' // compiles Less to CSS
+                }]
+            },
             {
                 test: /\.less$/,
                 exclude: [
