@@ -10,13 +10,17 @@ class Slide extends Component {
     render() {
         const imageAdd = require(`../../resources/Slide/${this.props.imageUrl}`)
 
-        return(
+        return (
             <div>
+
                 <div className={styles.slide} style={{backgroundImage: `url(${imageAdd})`}}>
+                    <div className={styles["wrap-slide"]}>
+                    </div>
                 </div>
+
             </div>
         )
     }
 }
 
-export  default Slide
+export default Slide

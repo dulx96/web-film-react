@@ -25,6 +25,13 @@ class MainContent extends Component {
                 <div className={styles["container-wrap"]}>
                     <Carousel/>
                     <Content/>
+                    <Content/>
+                    <Content/>
+                    <Content/>
+                    <Content/>
+                    <Content/>
+                    <Content/>
+
 
                 </div>
 
