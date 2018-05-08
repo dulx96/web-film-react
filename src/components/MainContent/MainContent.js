@@ -24,15 +24,10 @@ class MainContent extends Component {
                  style={{paddingTop: this.props.paddingTop}}>
                 <div className={styles["container-wrap"]}>
                     <Carousel/>
-                    <Content/>
-                    <Content/>
-                    <Content/>
-                    <Content/>
-                    <Content/>
-                    <Content/>
-                    <Content/>
-
-
+                    <Content title="Xem nhiều nhất" haveIcon={true} icon="mai.jpg" details=""/>
+                    <Content title="JLPT N3" icon="mai.jpg" details="phù hợp trình độ N3"/>
+                    <Content title="JLPT N4" icon="mai.jpg" details="phù hợp trình độ N4"/>
+                    <Content title="JLPT N5" icon="mai.jpg" details="phù hợp trình độ N5"/>
                 </div>
 
             </div>

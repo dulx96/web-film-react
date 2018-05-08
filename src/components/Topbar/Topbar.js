@@ -14,6 +14,7 @@ export default class Topbar extends Component {
     }
 
     render() {
+        const imgSrc = require(`../../resources/CircleImage/thoa.jpg`)
         return (
             <Menu fixed='top' borderless='true' ref={ (divElement) => this.divElement = divElement}>
                 <Container fluid='true'>
@@ -30,8 +31,16 @@ export default class Topbar extends Component {
                             style={{width: 600, marginTop: 11}}
                         />
                     </Container>
+
+                    <Menu.Item style={{color: '#0000008f', padding: '0'}}>
+                        <Icon name='block layout' size='large' />
+                    </Menu.Item>
+                    <Menu.Item style={{color: '#0000008f', padding: '0'}}>
+                        <Icon name='alarm' size='large' />
+                    </Menu.Item>
                     <Menu.Item>
-                        <Icon name='user circle' size='big' />
+                        {/*<Icon name='user circle' size='big' />*/}
+                        <Image src={imgSrc} size='mini' circular/>
                     </Menu.Item>
                 </Container>
             </Menu>
