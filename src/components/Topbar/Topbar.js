@@ -27,7 +27,7 @@ export default class Topbar extends Component {
                         <Input
                             icon={<Icon name='search' inverted circular link />}
                             placeholder='Search...'
-                            style={{width: 600}}
+                            style={{width: 600, marginTop: 11}}
                         />
                     </Container>
                     <Menu.Item>
