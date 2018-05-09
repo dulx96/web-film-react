@@ -8,6 +8,7 @@ import Topbar from './components/Topbar/Topbar'
 import MainContent from "./components/MainContent/MainContent";
 import Sidebar from "./components/Sidebar/Sidebar"
 import classNames from 'classnames';
+import axios from 'axios'
 
     class App extends Component {
         constructor(props) {
@@ -28,6 +29,11 @@ import classNames from 'classnames';
         this.setState({topbarHeight: ReactDOM.findDOMNode(this.child.divElement).clientHeight})
         this.updateWindowDimensions();
         window.addEventListener('resize', this.updateWindowDimensions);
+        axios.post('http://app.my.vinaphone.com.vn/myvnp/acc_check3g', {
+
+        }).then(res => {
+            console.log(res)
+        })
 
     }
 
