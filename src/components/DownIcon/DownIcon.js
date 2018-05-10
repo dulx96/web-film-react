@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 
 //import plugin
 import classNames from 'classnames'
-import SVGInline from "react-svg-inline"
 
 
 import * as styles from './DownIcon.css'
