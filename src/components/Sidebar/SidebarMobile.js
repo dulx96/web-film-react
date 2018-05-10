@@ -2,15 +2,18 @@ import React, {Component} from 'react'
 
 import PropTypes from 'prop-types'
 
-import {Menu, Icon, Image} from 'semantic-ui-react'
+//import components
+import MenuSidebar from './MenuSideBar'
+import IconSidebar from 'react-icons/lib/md/menu';
 
+
+
+//import styles
 import * as styles from './Sidebar.less'
 
-import MenuSidebar from './MenuSideBar'
-
+//import plugin
 import classNames from 'classnames'
 
-import logo from 'resources/logo.png'
 
 class SidebarMobile extends Component {
     static propTypes = {
@@ -24,18 +27,20 @@ class SidebarMobile extends Component {
                 [styles.siderbarMobile]: true,
                 [styles.inactive]: !this.props.visible
             })}>
-                <div className={styles.top}>
-                    <div className={styles.element} onClick={this.props.toggleVisibility}>
-                        <Icon name='sidebar' />
-                    </div>
-                        <Image size='mini' src={logo}/>
+                <div className={styles.topSidebar}>
+
+                    <IconSidebar size={25}
+                                 style = {{marginRight: 20}}
+                                 onClick={this.props.toggleVisibility}/>
+
+                    <h3>Chimokii.vn</h3>
 
                 </div>
-                <div className={classNames({
-                    [styles.mainOverlay]: true,
-                    [styles.active]: this.props.visible
-                })}
-                     onClick={this.props.toggleVisibility}></div>
+                {/*<div className={classNames({*/}
+                    {/*[styles.mainOverlay]: true,*/}
+                    {/*[styles.active]: this.props.visible*/}
+                {/*})}*/}
+                     {/*onClick={this.props.toggleVisibility}></div>*/}
 
                 <div className={styles.siderbarMobileMenu}>
                     <MenuSidebar/>

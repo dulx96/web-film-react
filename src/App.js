@@ -1,37 +1,43 @@
 import React, {Component} from 'react'
-import ReactDOM from 'react-dom'
-import {Button, Grid, Header, List, Segment} from 'semantic-ui-react'
 
-import 'styling/semantic.less'
-require('./styling/App.less')
+// component import
 import Topbar from './components/Topbar/Topbar'
-import MainContent from "./components/MainContent/MainContent";
-import Sidebar from "./components/Sidebar/Sidebar"
+import Board from './components/Board/Board'
+import HomeCarousel from './components/Carousel/HomeCarousel'
+
+
+// plugin import
 import classNames from 'classnames';
 import axios from 'axios'
 
-    class App extends Component {
-        constructor(props) {
+// style import
+import 'styling/semantic.less'
+import * as styles from './styling/App.less'
+
+class App extends Component {
+    constructor(props) {
         super(props)
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     }
+
     state = {
         sidebarVisible: false,
-        topbarHeight: 61,
+        boardVisible: false,
         screenWidth: 0
     }
-    toggleVisibility = () => {
+    toggleSidebar = () => {
         this.setState({sidebarVisible: !this.state.sidebarVisible})
 
     }
+    toggleBoard = () => {
+        this.setState({boardVisible: !this.state.boardVisible})
+    }
+
 
     componentDidMount() {
-        this.setState({topbarHeight: ReactDOM.findDOMNode(this.child.divElement).clientHeight})
         this.updateWindowDimensions();
         window.addEventListener('resize', this.updateWindowDimensions);
-        axios.post('http://app.my.vinaphone.com.vn/myvnp/acc_check3g', {
-
-        }).then(res => {
+        axios.post('http://app.my.vinaphone.com.vn/myvnp/acc_check3g', {}).then(res => {
             console.log(res)
         })
 
@@ -42,27 +48,31 @@ import axios from 'axios'
     }
 
     updateWindowDimensions() {
-        this.setState({ screenWidth: window.innerWidth, sidebarVisible: window.innerWidth >= 1276 ? true: false});
+        this.setState({screenWidth: window.innerWidth, sidebarVisible: window.innerWidth >= 1276 ? true : false});
     }
 
     render() {
+        const screenWidth = this.state.screenWidth
+        const boardVisible = this.state.boardVisible
         const sidebarVisible = this.state.sidebarVisible
-        const topbarHeight = this.state.topbarHeight
+        const imgAdd = require(`./resources/HomeCarouselImage/img1.jpg`)
         return (
-            <div className="main">
+            <div className='main' style={{backgroundImage: `url(${imgAdd})`}}>
 
-                <Topbar
-                    ref={(node) => {this.child = node}}
-                        onCLick={this.toggleVisibility}>
+                <Topbar avatarImgId='thoa.jpg' toggleBoard={this.toggleBoard} boardVisible={this.state.boardVisible}>
+
                 </Topbar>
 
-                <Sidebar visible={sidebarVisible} paddingTop={topbarHeight} toggleVisibility={this.toggleVisibility}>
+                <div className="content-body">
+                    <HomeCarousel>
+                    </HomeCarousel>
+                    <Board screenWidth={screenWidth} sidebarVisible={sidebarVisible} toggleSidebar={this.toggleSidebar} boardVisible={boardVisible}/>
 
-                </Sidebar>
 
-                <MainContent visible={sidebarVisible} paddingTop={topbarHeight} sidebarMobile={this.state.screenWidth < 1276 ? true : false}>
+                </div>
 
-                </MainContent>
+
+
 
             </div>
         )

@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
 
-import {Image} from 'semantic-ui-react'
+//import components
 import CardItem from '../CardITem/CardItem'
+
+//inport styles
 import * as styles from './MainContent.less'
-import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import hotIcon from '@fortawesome/fontawesome-free-solid/faFire'
+
 
 class Content extends Component {
     constructor(props) {
@@ -12,14 +13,17 @@ class Content extends Component {
     }
 
     render() {
-        const imageAdd = require(`../../resources/CircleImage/${this.props.icon}`)
+        // const imageAdd = require(`../../resources/CircleImage/${this.props.icon}`)
         return (
             <div className={styles["wrap-content"]}>
                 <div className={styles["content"]}>
                     <div>
                         <div className={styles.title}>
                             <h2>
-                                <Image size='mini' src={imageAdd} circular/>
+                                <div className={styles["circle-image"]}
+                                style={{backgroundColor: this.props.color}}>
+
+                                </div>
                                 <p>{this.props.title}</p>
                                 <span>{this.props.details}</span>
                             </h2>

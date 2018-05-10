@@ -1,10 +1,6 @@
 import PropTypes from 'prop-types'
 import React, {Component} from 'react'
 
-
-import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import faStar from '@fortawesome/fontawesome-free-solid/faStar'
-import faPlayCircle from '@fortawesome/fontawesome-free-solid/faPlayCircle'
 import * as styles from "./SlideCard.less";
 
 class CardItem extends Component {

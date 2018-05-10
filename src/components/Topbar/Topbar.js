@@ -1,52 +1,61 @@
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 
-import {Container, Menu, Image, Icon, Input} from 'semantic-ui-react'
+//import component
+import IconBoard from 'react-icons/lib/md/group-work';
 
-import logo from 'resources/logo.png'
+// plugin import
+import classNames from 'classnames';
 
+//import style
 import * as styles from './Topbar.less'
 
-export default class Topbar extends Component {
+class Topbar extends Component {
     static propTypes = {
-        onCLick: PropTypes.func
+        avatarImgId: PropTypes.string,
+        boardVisible: PropTypes.bool,
+        toggleBoard: PropTypes.func
     }
 
     render() {
-        const imgSrc = require(`../../resources/CircleImage/thoa.jpg`)
-        return (
-            <Menu fixed='top' borderless='true' ref={ (divElement) => this.divElement = divElement}>
-                <Container fluid='true'>
-                    <Menu.Item onClick={this.props.onCLick}>
-                        <Icon name='sidebar' />
-                    </Menu.Item>
-                    <Menu.Item>
-                        <Image size='mini' src={logo}/>
-                    </Menu.Item>
-                    <Container className={styles.SearchWrap} textAlign='center'>
-                        <Input
-                            icon={<Icon name='search' inverted circular link />}
-                            placeholder='Search...'
-                            style={{width: 600, marginTop: 11}}
-                        />
-                    </Container>
+        const avatarImgAdd = require(`../../resources/CircleImage/${this.props.avatarImgId}`)
 
-                    <Menu.Item style={{color: '#0000008f', padding: '0'}}>
-                        <Icon name='block layout' size='large' />
-                    </Menu.Item>
-                    <Menu.Item style={{color: '#0000008f', padding: '0'}}>
-                        <Icon name='alarm' size='large' />
-                    </Menu.Item>
-                    <Menu.Item>
-                        {/*<Icon name='user circle' size='big' />*/}
-                        <Image src={imgSrc} size='mini' circular/>
-                    </Menu.Item>
-                </Container>
-            </Menu>
+        return (
+            <div className={styles.wrap}>
+                <div className={styles.content}>
+                    <a
+                       onClick={this.props.toggleBoard}>
+                        <IconBoard className={classNames({
+                            [styles["board-inactive"]]: true,
+                            [styles["board-active"]]: this.props.boardVisible
+
+
+                        })} size={40} />
+                    </a>
+
+                    <div style={{flex: 1}}>
+
+                    </div>
+
+                    <div className={styles.menu}>
+                        <p>Home</p>
+                        <p>News</p>
+                        <p>Contact</p>
+                        <p>Help</p>
+                        <p>Info</p>
+                        <p>Profile</p>
+                    </div>
+
+                    <div className={styles.avatar} style={{backgroundImage: `url(${avatarImgAdd})`}}>
+                    </div>
+                </div>
+            </div>
         )
     }
 }
+
+export default Topbar
 
 
 

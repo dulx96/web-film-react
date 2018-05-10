@@ -1,154 +1,52 @@
-@color-hover: #ee5253;
-@overlay-gradient: linear-gradient(rgba(123, 123, 123, 0.31) 30%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.6) 100%);
-@overlay-hover-gradient: linear-gradient(rgba(255, 107, 107, 0.87) 0%, rgba(0, 0, 0, 0.6) 100%);
-@card-magrin: 0px;
+.wrap {
+  position: fixed;
+  top: 0;
+  z-index: 1 ;
+}
 
+.content {
+  width: 100vw;
+  height: 52px;
 
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  color: white;
+  a {
+    color: white;
+    border: transparent;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+  }
+}
 
-.card-item {
-  position: relative;
-  display:inline-block;
-  margin: 10px @card-magrin;
-  width: 210px;
-  height: 320px;
-  overflow: hidden;
+.menu {
+  display: flex;
+  align-items: center;
+  p {
+    padding: 0 10px;
+    margin: 0;
+  }
+
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  margin: 0 30px;
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
-  border-radius: 5px;
-
+  border-radius: 50px;
 }
 
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: @overlay-gradient;
-  transition: all 0.3s;
-
-  .star {
-    position: absolute;
-    right: 10px;
-    top: 12px;
-    width: auto;
-    color: @color-hover;
-    display: flex;
-    align-items: center;
-    & p {
-      margin-left: 5px;
-      color: white !important;
-    }
-  }
-
-  .info {
-    color: white;
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    padding: 0 40px 0 10px;
-    transition: all 0.3s;
-
-    h3 {
-      text-overflow: ellipsis;
-      word-wrap: break-word;
-      overflow: hidden;
-      max-height: 2.4em;
-      line-height: 1.2em;
-      font-family: 'Roboto Condensed', sans-serif !important;
-
-    }
-    p {
-      margin-bottom: 3px;
-    }
-
-    .light{
-      font-weight: lighter;
-    }
-
-    .expandable {
-      font-weight: lighter;
-      opacity: 0;
-      transition: 0.4s;
-    }
-
-
-  }
-  .details-button {
-    position: absolute;
-    height: 30px;
-    width: 60px;
-    bottom: 30px;
-    left: 0;
-    padding: 4px 5px 4px 5px;
-    background: white;
-    color: rgba(0, 0, 0, 0.8);
-    border-radius: 0 20px 20px 0;
-  }
-  .length {
-    position: absolute;
-    height: 30px;
-    width: 75px;
-    top: 15px;
-    left: 0;
-    padding: 5px 5px 5px 17px;
-    background: @color-hover;
-    color: white;
-    border-radius: 0 30px 30px 0;
-    opacity: 0;
-    transition: all 0.3s;
-  }
-  .views {
-    position: absolute;
-    height: 30px;
-    width: 80px;
-    bottom: 30px;
-    right: 0;
-    padding: 5px 2px 3px 8px;
-    background: white;
-    color: rgba(0, 0, 0, 0.8);
-    border-radius: 30px 0 0 30px;
-    opacity: 0;
-    transition: all 0.3s;
-  }
-  .playIcon {
-    position: absolute;
-    font-size: 60px;
-    color: white;
-    top: 45px;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: all 0.3s;
-
-    &:hover {
-      color: @color-hover;
-    }
-
-  }
-  &:hover {
-    background: @overlay-hover-gradient;
-    .info {
-      transform: translateY(-50px);
-      h3 {
-        color: @color-hover;
-      }
-      .expandable {
-        opacity: 1;
-      }
-    }
-    .details-button {
-      background: @color-hover;
-      color: white;
-    }
-    .views, .length, .playIcon {
-      opacity: 1;
-    }
-
-
-  }
-
+.board-inactive {
+  transition: all 0.6s;
+  transform: rotate(0deg);
+  transform-origin: 50% 50%;
 }
-
-
+.board-active {
+  transform: rotate(360deg);
+}

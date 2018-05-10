@@ -9,20 +9,18 @@ import classNames from "classnames";
 class Sidebar extends Component {
     static propTypes = {
         visible: PropTypes.bool,
-        paddingTop: PropTypes.number,
         toggleVisibility: PropTypes.func
-
     }
 
     render() {
         return (
             <div>
-                <Responsive minWidth={1276} style={{paddingTop: this.props.paddingTop}}
+                <Responsive minWidth={1276}
                             className={classNames({
-                                [styles.siderbarDesktop]: true,
+                                [styles.sidebarDesktop]: true,
                                 [styles.inactive]: !this.props.visible
                             })}>
-                    <SidebarDesktop/>
+                    <SidebarDesktop visible={this.props.visible} toggleVisibility={this.props.toggleVisibility}/>
 
                 </Responsive>
 

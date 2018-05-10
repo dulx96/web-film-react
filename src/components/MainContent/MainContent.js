@@ -10,7 +10,6 @@ class MainContent extends Component {
     static propTypes = {
         visible: PropTypes.bool,
         sidebarMobile: PropTypes.bool,
-        paddingTop: PropTypes.number,
 
     }
 
@@ -20,14 +19,12 @@ class MainContent extends Component {
                 [styles["main-container"]]: true,
                 [styles.notfull]: this.props.visible,
                 [styles.mobile]: this.props.sidebarMobile
-            })}
-                 style={{paddingTop: this.props.paddingTop}}>
+            })}>
                 <div className={styles["container-wrap"]}>
-                    <Carousel/>
-                    <Content title="Xem nhiều nhất" haveIcon={true} icon="mai.jpg" details=""/>
-                    <Content title="JLPT N3" icon="mai.jpg" details="phù hợp trình độ N3"/>
-                    <Content title="JLPT N4" icon="mai.jpg" details="phù hợp trình độ N4"/>
-                    <Content title="JLPT N5" icon="mai.jpg" details="phù hợp trình độ N5"/>
+                    <Content title="Xem nhiều nhất" color="#fc5c65" details=""/>
+                    <Content title="JLPT N3" color="#26de81" details="phù hợp trình độ N3"/>
+                    <Content title="JLPT N4" color="#0fb9b1" details="phù hợp trình độ N4"/>
+                    <Content title="JLPT N5" color="#2d98da" details="phù hợp trình độ N5"/>
                 </div>
 
             </div>

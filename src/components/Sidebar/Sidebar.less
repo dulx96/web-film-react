@@ -1,10 +1,9 @@
-.siderbarDesktop {
+.sidebarDesktop {
   position: absolute;
   z-index: 100;
   height: 100vh;
   width: 240px;
   background-color: #f5f5f5;
-  opacity: 0.8;
   transition: all 0.3s;
   color: azure;
   overflow: hidden;
@@ -14,19 +13,33 @@
 
 }
 
-.siderbarDesktop.inactive {
+.sidebarDesktop.inactive {
   opacity: 0;
   transform: translateX(-240px);
 }
 
+.topSidebar {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  margin: 10px 0;
+  padding: 0 20px;
+  align-items: center;
+  color: black;
+
+  h3 {
+    margin: 0;
+    font-size: 2em;
+  }
+}
+
 .siderbarMobile {
   position: fixed;
-  top:0;
-  left: 0;
   z-index: 102;
   height: 100vh;
   width: 240px;
-  background-color: white;
+  background-color: #f5f5f5 ;
+  box-shadow: 10px 0 15px -8px #777;
   opacity: 1;
   transition: all 0.3s;
   color: azure;

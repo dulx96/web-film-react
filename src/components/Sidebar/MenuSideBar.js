@@ -54,6 +54,75 @@ const MenuSidebar = () => (
             <Icon color="grey" name='settings' size='large'/>
             <p>Setting</p>
         </div>
+        <div className={styles.menuItem}>
+            <h3 style={{marginTop: 10, fontWeight: 400, color: 111111}}>LEVEL</h3>
+        </div>
+        <div className={styles.menuItem}>
+            <Icon color="grey" name='industry' size='large'/>
+            <p>Level JLPT N1</p>
+        </div>
+        <div className={styles.menuItem}>
+            <Icon color="grey" name='industry' size='large'/>
+            <p>Level JLPT N2</p>
+        </div>
+        <div className={styles.menuItem}>
+            <Icon color="grey" name='industry' size='large'/>
+            <p>Level JLPT N3</p>
+        </div>
+        <div className={styles.menuItem}>
+            <Icon color="grey" name='industry' size='large'/>
+            <p>Level JLPT N4</p>
+        </div>
+        <div className={styles.menuItem}>
+            <Icon color="grey" name='industry' size='large'/>
+            <p>Level JLPT N5</p>
+        </div>
+        <div className={styles.menuItem}>
+            <h3 style={{marginTop: 10, fontWeight: 400, color: 111111}}>LEVEL</h3>
+        </div>
+        <div className={styles.menuItem}>
+            <Icon color="grey" name='industry' size='large'/>
+            <p>Level JLPT N1</p>
+        </div>
+        <div className={styles.menuItem}>
+            <Icon color="grey" name='industry' size='large'/>
+            <p>Level JLPT N2</p>
+        </div>
+        <div className={styles.menuItem}>
+            <Icon color="grey" name='industry' size='large'/>
+            <p>Level JLPT N3</p>
+        </div>
+        <div className={styles.menuItem}>
+            <Icon color="grey" name='industry' size='large'/>
+            <p>Level JLPT N4</p>
+        </div>
+        <div className={styles.menuItem}>
+            <Icon color="grey" name='industry' size='large'/>
+            <p>Level JLPT N5</p>
+        </div>
+        <div className={styles.menuItem}>
+            <h3 style={{marginTop: 10, fontWeight: 400, color: 111111}}>LEVEL</h3>
+        </div>
+        <div className={styles.menuItem}>
+            <Icon color="grey" name='industry' size='large'/>
+            <p>Level JLPT N1</p>
+        </div>
+        <div className={styles.menuItem}>
+            <Icon color="grey" name='industry' size='large'/>
+            <p>Level JLPT N2</p>
+        </div>
+        <div className={styles.menuItem}>
+            <Icon color="grey" name='industry' size='large'/>
+            <p>Level JLPT N3</p>
+        </div>
+        <div className={styles.menuItem}>
+            <Icon color="grey" name='industry' size='large'/>
+            <p>Level JLPT N4</p>
+        </div>
+        <div className={styles.menuItem}>
+            <Icon color="grey" name='industry' size='large'/>
+            <p>Level JLPT N5</p>
+        </div>
     </div>
 )
 
