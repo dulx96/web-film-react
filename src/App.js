@@ -4,6 +4,7 @@ import React, {Component} from 'react'
 import Topbar from './components/Topbar/Topbar'
 import Board from './components/Board/Board'
 import HomeCarousel from './components/Carousel/HomeCarousel'
+import DownIcon from './components/DownIcon/DownIcon'
 
 
 // plugin import
@@ -55,7 +56,7 @@ class App extends Component {
         const screenWidth = this.state.screenWidth
         const boardVisible = this.state.boardVisible
         const sidebarVisible = this.state.sidebarVisible
-        const imgAdd = require(`./resources/HomeCarouselImage/img1.jpg`)
+        const imgAdd = require(`./resources/HomeCarouselImage/img4.jpg`)
         return (
             <div className='main' style={{backgroundImage: `url(${imgAdd})`}}>
 
@@ -64,12 +65,13 @@ class App extends Component {
                 </Topbar>
 
                 <div className="content-body">
-                    <HomeCarousel>
+                    <HomeCarousel screenWidth={screenWidth}>
                     </HomeCarousel>
                     <Board screenWidth={screenWidth} sidebarVisible={sidebarVisible} toggleSidebar={this.toggleSidebar} boardVisible={boardVisible}/>
 
-
+                    <DownIcon toggleBoard={this.toggleBoard}/>
                 </div>
+
 
 
 
