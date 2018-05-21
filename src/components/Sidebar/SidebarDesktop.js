@@ -9,6 +9,7 @@ import classNames from 'classnames'
 
 //import style
 import * as styles from './Sidebar.less'
+import {Link} from "react-router-dom";
 
 class SidebarDesktop extends Component {
     static propTypes = {
@@ -28,7 +29,7 @@ class SidebarDesktop extends Component {
                     style = {{marginRight: 20}}
                                  onClick={this.props.toggleVisibility}/>
 
-                    <h3>Chimokii.vn</h3>
+                    <h3><Link to='/'>Chimokii.vn </Link></h3>
 
                 </div>
                 <div>
