@@ -76,12 +76,13 @@ class App extends Component {
                                    boardVisible={boardVisible}/>
 
                             <DownIcon toggleBoard={this.toggleBoard}/>
+                            <Route path='/:item/:X/:Y' render={({match}) => (
+                            <MovieDetails imageID={match.params.item} X={match.params.X} Y={match.params.Y}/>
+                        )}/>
                         </div>
                     )}/>
 
-                    <Route path='/:item/:X/:Y' render={({match}) => (
-                        <MovieDetails imageID={match.params.item} X={match.params.X} Y={match.params.Y}/>
-                    )}/>
+
                 </div>
             </Router>
         )

@@ -23,8 +23,10 @@ export default class MovieDetails extends Component {
         const imageItemUrl = require(`../../resources/item/${this.props.imageID}`)
         const styleItemCard = {
             backgroundImage: `url(${imageItemUrl})`,
-            top: (this.props.Y - 270) + 'px',
-            left: (this.props.X - 20) + 'px',
+            top: '400px',
+            left: '600px',
+            transform: `translate(${(this.props.X - (-40)) - 600}px,${-400 + (this.props.Y - 240)}px)`,
+
         }
         return (
             <div className={styles.wrap}>
