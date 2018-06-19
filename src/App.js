@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 // component import
@@ -22,7 +21,6 @@ class App extends Component {
     sidebarVisible: false,
     boardVisible: false,
     screenWidth: 0,
-    onLoad: true
   }
   toggleSidebar = () => {
     this.setState({sidebarVisible: !this.state.sidebarVisible})
@@ -32,12 +30,9 @@ class App extends Component {
     this.setState({boardVisible: !this.state.boardVisible})
   }
 
-  handleLoad = () => this.setState({onLoad: false})
-
   componentDidMount () {
     this.updateWindowDimensions()
     window.addEventListener('resize', this.updateWindowDimensions)
-    window.addEventListener('load', this.handleLoad)
 
   }
 
@@ -55,32 +50,31 @@ class App extends Component {
     const sidebarVisible = this.state.sidebarVisible
     const imgAdd = require(`./resources/HomeCarouselImage/img4.jpg`)
     return (
-      this.state.onLoad ? <h1> on Loading</h1> :
-        <Router>
-          <div className='main' style={{backgroundImage: `url(${imgAdd})`}}>
+      <Router>
+        <div className='main' style={{backgroundImage: `url(${imgAdd})`}}>
 
-            <Topbar avatarImgId='thoa.jpg' toggleBoard={this.toggleBoard}
-                    boardVisible={this.state.boardVisible}>
-            </Topbar>
+          <Topbar avatarImgId='thoa.jpg' toggleBoard={this.toggleBoard}
+                  boardVisible={this.state.boardVisible}>
+          </Topbar>
 
-            <Route path='/' render={() => (
-              <div className="content-body">
-                <HomeCarousel screenWidth={screenWidth}>
-                </HomeCarousel>
-                <Board screenWidth={screenWidth} sidebarVisible={sidebarVisible}
-                       toggleSidebar={this.toggleSidebar}
-                       boardVisible={boardVisible}/>
+          <Route path='/' render={() => (
+            <div className="content-body">
+              <HomeCarousel screenWidth={screenWidth}>
+              </HomeCarousel>
+              <Board screenWidth={screenWidth} sidebarVisible={sidebarVisible}
+                     toggleSidebar={this.toggleSidebar}
+                     boardVisible={boardVisible}/>
 
-                <DownIcon toggleBoard={this.toggleBoard}/>
-                <Route path='/:item/:X/:Y' render={({match}) => (
-                  <MovieDetails imageID={match.params.item} X={match.params.X} Y={match.params.Y}/>
-                )}/>
-              </div>
-            )}/>
+              <DownIcon toggleBoard={this.toggleBoard}/>
+              <Route path='/:item/:X/:Y' render={({match}) => (
+                <MovieDetails imageID={match.params.item} X={match.params.X} Y={match.params.Y}/>
+              )}/>
+            </div>
+          )}/>
 
 
-          </div>
-        </Router>
+        </div>
+      </Router>
     )
   }
 }
