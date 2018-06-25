@@ -8,8 +8,7 @@ import MovieDetails from './components/Details/MovieDetails'
 import DownIcon from './components/DownIcon/DownIcon'
 
 // style import
-import 'styling/semantic.less'
-import * as styles from './styling/App.less'
+import './styling/App.css'
 
 class App extends Component {
   constructor (props) {
